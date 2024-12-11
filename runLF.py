@@ -1,5 +1,38 @@
 import sys
 import subprocess
+import time
+import os
+os.system("")  # enables ansi escape characters in terminal
+
+#title
+print("LLLLLLL                          FFFFFFFFFFFFFFFFFFFFFF")
+print("L:::::L                          F::::::::::::::::::::F")
+print("L:::::L                          F::::::::::::::::::::F")
+print("L:::::L                          FF::::::FFFFFFFFF::::F")
+print("L:::::L                           F:::::F       FFFFFF")
+print("L:::::L                           F:::::F             ")
+print("L:::::L                           F::::::FFFFFFFFFF   ")
+print("L:::::L                           F:::::::::::::::F   ")
+print("L:::::L                           F:::::::::::::::F   ")
+print("L:::::L                           F::::::FFFFFFFFFF   ")
+print("L:::::L                           F:::::F  ")
+print("L:::::L      LLLLLL   PPPPPPPP    F:::::F  ")
+print("L::::::LLLLLL::::::L  pp::::PP  FF:::::::FF")
+print("L::::::::::::::::::L  p:::::PP  F::::::::FF")
+print("L::::::::::::::::::L  p:::::PP  F::::::::FF")
+print("LLLLLLLLLLLLLLLLLLLL  pppppppp  FFFFFFFFFFF")
+print()
+print("+---------------------------------------------+")
+print("| Batch Processing Streamurls with FFmpeg     |")
+print("+---------------------------------------------+")
+print("| Extracting URLs...                          |")
+print("| Generating Batch File Commands...           |")
+print("| Sequential Execution with Error Handling... |")
+print("+---------------------------------------------+")
+print("| Powered by Python, FFmpeg and Seppo         |")
+print("+---------------------------------------------+")
+
+time.sleep(5)
 
 # Input and output files
 input_file = sys.argv[1]
@@ -32,11 +65,16 @@ with open(input_file, "r", encoding="utf8") as i, open(output_file, "w", encodin
     o.write("  pause\n")
     o.write("  exit /b\n")
     o.write(")\n")
-    o.write("echo All commands executed successfully.\n")
+    o.write("echo+---------------------------------------------+\n")
+    o.write("echo| All commands executed successfully          |\n")
+    o.write("echo+---------------------------------------------+\n")
     o.write("pause\n")
 
 print(f"{a} files found in this text file.")
-print("Executing batch file...")
+print("+---------------------------------------------+")
+print("| Executing batch file...                     |")
+print("+---------------------------------------------+")
+time.sleep(3)
 
 # Run the batch file
 subprocess.run(output_file, shell=True)
