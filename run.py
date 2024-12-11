@@ -15,8 +15,8 @@ with open(input_file, "r", encoding="utf8") as i, open(output_file, "w", encodin
     
     for index, line in enumerate(lines, start=1):
         a += 1
-        url_part = line[line.rindex(' ') + 1:].strip()  # Extract URL
-        output_name = line[:line.rindex(' ')].strip()  # Extract output name
+        url_part = line[line.rindex('_') + 1:].strip()  # Extract URL
+        output_name = line[:line.rindex('_')].strip()  # Extract output name
         
         print(f"{output_name} : {url_part}")
         
