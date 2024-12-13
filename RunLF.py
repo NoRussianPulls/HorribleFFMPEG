@@ -33,17 +33,26 @@ print("| Powered by Python, FFmpeg and Seppo         |")
 print("+---------------------------------------------+")
 
 time.sleep(5)
-
-# Input and output files
-input_file = sys.argv[1]
+# Input and output files and settings
+if len(sys.argv) < 2:
+    input_file = input('Path to the file')
+else:
+     input_file = sys.argv[1]
 output_file = input_file + "_Output.bat"
+link = input('A specific set of Url leading to streams?(leave Empty to use every Url )')
+if link == '':
+    link = 'https://'
+distinctcharacter = input('Any special character to distinct between url part and outputname?(leave empty for default: "_")')
+if distinctcharacter == '':
+    distinctcharacter = '_'
 
 # Open files
 with open(input_file, "r", encoding="utf8") as i, open(output_file, "w", encoding="utf8") as o:
     a = 0  # Count of valid lines
     o.write("@echo off\n")
     
-    lines = [line.strip() for line in i if line.strip() and 'https://' in line]  # Filter valid lines
+    lines = [line.strip() for line in i if line.strip() and link in line and distinctcharacter in line]
+
     count = len(lines)
     
     for index, line in enumerate(lines, start=1):
