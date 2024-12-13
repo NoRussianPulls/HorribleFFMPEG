@@ -32,7 +32,7 @@ print("+---------------------------------------------+")
 print("| Powered by Python, FFmpeg and Seppo         |")
 print("+---------------------------------------------+")
 
-time.sleep(5)
+time.sleep(3)
 # Input and output files and settings
 if len(sys.argv) < 2:
     input_file = input('Path to the file')
